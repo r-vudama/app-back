@@ -1,0 +1,37 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  script(src="moment.min.js")
+  link(rel='stylesheet' href='/styles.css')
+  title Document
+  h1.title PRODUCTOS FORM
+  ul
+    li
+      label(for='name') T&iacute;tulo:
+      input#title(type='text' name='title' required='')
+    li
+      label(for='name') Precio:
+      input#price(type='number' name='price' required='')
+    li
+      label(for='name') Descripci&oacute;n:
+      input#thumbnail(type='text' name='thumbnail' required='')
+    li.button
+  button#enviar(onclick='return addMessage(this)') Guardar producto
+  table.table
+    thead.thead
+      tr.thead__tr
+        th.thead__th Producto
+        th.thead__th Precio
+        th.thead__th Imagen
+    tbody#messages
+  
+  div(class='comentarios-container')
+    h3(class='comentarios-title')='Comentarios'
+    input(type="email" name="email" id="email" placeholder="Escribe tu mail" required='')
+    div(id="comments")
+    input(type="text" name="comment" id="comment" placeholder="Dejá tu comentario" required='')
+    button(onclick="sendData(this)" id="enviar-comment")="ENVIAR"
+script(src="/socket.io/socket.io.js")
+script(src='main.js')
